@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Validado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="formulario" novalidate>
+
+        <!-- Progress Bar -->
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <!-- Etapa 1 -->
+        <div class="etapa active" id="etapa1">
+            <h2>Inscrição - Etapa 1</h2>
+            <p>Preencha seus dados pessoais.</p>
+            
+            <div class="campo">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <span class="erro">Por favor, insira seu nome.</span>
+            </div>
+
+            <div class="campo">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="erro">Insira um email válido.</span>
+            </div>
+
+            <button type="button" class="proximo">Próximo</button>
+        </div>
+
+        <!-- Etapa 2 -->
+        <div class="etapa" id="etapa2">
+            <h2>Inscrição - Etapa 2</h2>
+            <p>Escolha seu curso e adicione informações extras.</p>
+
+            <div class="campo">
+                <label for="curso">Curso:</label>
+                <select id="curso" name="curso" required>
+                    <option value="">Selecione...</option>
+                    <option value="web">Desenvolvimento Web</option>
+                    <option value="data">Ciência de Dados</option>
+                    <option value="ux">UX/UI Design</option>
+                    <option value="marketing">Marketing Digital</option>
+                    <option value="mobile">Desenvolvimento Mobile</option>
+                    <option value="ai">Inteligência Artificial</option>
+                    <option value="cloud">Computação em Nuvem</option>
+                </select>
+                <span class="erro">Selecione um curso.</span>
+            </div>
+
+            <div class="campo">
+                <label for="info">Adicionar ou Substituir Informação:</label>
+                <input type="text" id="info" name="info" placeholder="Digite nova informação ou atualize a existente" required>
+                <span class="erro">Por favor, insira a informação.</span>
+            </div>
+
+            <button type="button" class="proximo">Próximo</button>
+        </div>
+
+        <!-- Etapa 3 -->
+        <div class="etapa" id="etapa3">
+            <h2>Inscrição - Etapa 3</h2>
+            <p>Complete com informações adicionais.</p>
+
+            <div class="campo">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx" required>
+                <span class="erro">Por favor, insira um telefone válido.</span>
+            </div>
+
+            <div class="campo">
+                <label for="conheceu">Como você conheceu o curso?</label>
+                <select id="conheceu" name="conheceu" required>
+                    <option value="">Selecione...</option>
+                    <option value="internet">Internet / Redes Sociais</option>
+                    <option value="amigos">Indicação de Amigos</option>
+                    <option value="email">Email Marketing</option>
+                    <option value="evento">Evento / Workshop</option>
+                    <option value="escola">Escola / Universidade</option>
+                    <option value="anuncio">Anúncio Online / Google Ads</option>
+                    <option value="outro">Outro</option>
+
+                </select>
+                <span class="erro">Selecione uma opção.</span>
+            </div>
+
+            <button type="submit">Finalizar</button>
+        </div>
+
+        <!-- Etapa 4 -->
+<div class="etapa" id="etapa4" style="display: none;">
+    <h2>Inscrição - Etapa 4</h2>
+    <p>Escolha suas preferências de contato e horário.</p>
+
+    <div class="campo">
+        <label>Preferências de contato:</label>
+        <div>
+            <input type="checkbox" id="whatsapp" name="contato" value="whatsapp">
+            <label for="whatsapp">WhatsApp</label>
+        </div>
+        <div>
+            <input type="checkbox" id="emailContato" name="contato" value="email">
+            <label for="emailContato">Email</label>
+        </div>
+        <div>
+            <input type="checkbox" id="telefoneContato" name="contato" value="telefone">
+            <label for="telefoneContato">Telefone</label>
+        </div>
+    </div>
+
+    <div class="campo">
+        <label for="horario">Horário de preferência:</label>
+        <select id="horario" name="horario" required>
+            <option value="">Selecione...</option>
+            <option value="manha">Manhã</option>
+            <option value="tarde">Tarde</option>
+            <option value="noite">Noite</option>
+        </select>
+        <span class="erro">Selecione um horário.</span>
+    </div>
+
+    <button type="button" class="proximo">Próximo</button>
+</div>
+<!-- Etapa 5 -->
+<div class="etapa" id="etapa5" style="display: none;">
+    <h2>Inscrição - Etapa 5</h2>
+    <p>Deixe comentários ou observações finais.</p>
+
+    <div class="campo">
+        <label for="comentario">Mensagem / Observações:</label>
+        <textarea id="comentario" name="comentario" placeholder="Digite sua mensagem" rows="4"></textarea>
+    </div>
+
+    <div class="campo">
+        <label>
+            <input type="checkbox" id="termos" name="termos" required>
+            Li e aceito a <a href="#">Política de Privacidade</a>.
+        </label>
+        <span class="erro">Você precisa aceitar a política para continuar.</span>
+    </div>
+
+    <button type="submit">Finalizar Inscrição</button>
+</div>
+<!-- Etapa 6 -->
+<div class="etapa" id="etapa6" style="display: none;">
+    <h2>Etapa 6: Revisão e Informações Extras</h2>
+    <p>Confira seus dados e adicione informações extras, se desejar.</p>
+
+    <div class="campo">
+        <label for="comoMelhorar">Como podemos melhorar?</label>
+        <textarea id="comoMelhorar" name="comoMelhorar" placeholder="Digite sugestões ou comentários" rows="4"></textarea>
+    </div>
+
+    <div class="campo">
+        <label for="confirmacao">
+            <input type="checkbox" id="confirmacao" name="confirmacao" required>
+            Confirmo que todas as informações fornecidas estão corretas.
+        </label>
+        <span class="erro">Você precisa confirmar os dados para enviar.</span>
+    </div>
+
+    <button type="submit">Enviar Formulário</button>
+</div>
+        <!-- Aviso de privacidade -->
+        <p id="privacidade">
+            Seus dados serão usados apenas para enviar informações do curso conforme a <a href="#">Política de Privacidade</a>.
+        </p>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
